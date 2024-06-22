@@ -9,18 +9,18 @@ template = '''
 
                         <Description>
 
-                        ### Discussion (Optional)
+                        ### Discussion
   
                           1. <Discussion 1>
                           2. <Discussion 2>
                           3. <Discussion 3>
                       
-                        ### Features (Optional)
+                        ### Features
 
                         - <Feature 1>
                         - <Feature 2>
                       
-                        ### Usage (Optional)
+                        ### Usage
 
                         #### Installation
                       
@@ -43,7 +43,7 @@ template = '''
                         - <External Link 1>
                         - <External Link 2>
 
-                        ### Caution (Optional)
+                        ### Caution
 
                           - <Caution 1>
                           - <Caution 2>
