@@ -1,7 +1,7 @@
 from src.generative import NewsGenerator
 from datetime import datetime
 
-api_key = '<YOUR API KEY>'
+api_key = '<YOUR_API_KEY>'
 model = 'gemini-1.5-flash'
 
 title = '[GDC] Weekly Newsletter #1'
@@ -20,9 +20,11 @@ def main():
     generator = NewsGenerator(api_key, model)
 
     generator.make_header(title)
+    wrote_urls = []
     for url in urls:
-        generator.generate(url)
-    generator.make_trailer(urls)
+        if generator.generate(url):
+            wrote_urls.append(url)
+    generator.make_trailer(wrote_urls)
 
     now = datetime.now()
 
