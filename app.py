@@ -1,4 +1,5 @@
 from src.generative import NewsGenerator
+from datetime import datetime
 
 api_key = '<YOUR_API_KEY>'
 model = 'gemini-1.5-flash'
@@ -23,7 +24,10 @@ def main():
         generator.generate(url)
     generator.make_trailer()
 
-    print(generator)
+    now = datetime.now()
+
+    with open(f'news-{now.year}:{now.month}:{now.day}-{now.hour}:{now.minute}:{now.second}.md', 'w', encoding='UTF-8') as f:
+        f.write(str(generator))
 
 
 if __name__ == '__main__':
