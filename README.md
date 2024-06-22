@@ -9,5 +9,3 @@ This is a simple newsletter generator using the [google-ai-studio](https://ai.go
 3. Install the required packages. (`pip install -r requirements.txt`)
 4. Edit the api key and url list in the `app.py` file.
 5. Run the `app.py` file.
-
-> If you want, you can redefine standard output to a file.
