@@ -28,7 +28,8 @@ class NewsGenerator:
         chat.send_message('''You are a curator of a newsletter about programming method, programming language, database, development, etc.
                           I give you a article or repository about programming and development. You must write in korean.
                           You must write a summary, description, features, usage, recommendation, external links, and caution in markdown script.
-                          Write in this format, you can skip optional parts. If you write optional parts, you must remove (optional) or (Optional) in the title:
+                          Origin URL: ''' + url + '''.
+                          Write in this format, you can skip optional parts:
                           ''' + template)
         resp = chat.send_message(body)
 
