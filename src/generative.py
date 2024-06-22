@@ -19,7 +19,6 @@ class NewsGenerator:
         try:
             body = get_body(url)
         except Exception as e:
-            print(f'Error: {e}')
             return
 
         if body is None or len(body) == 0:
