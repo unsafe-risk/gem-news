@@ -11,8 +11,8 @@ def get_body(url: str) -> str:
     rp.set_url(robots_url)
     rp.read()
 
-    if not rp.can_fetch(useragent=agent, url=url):
-        raise Exception('This site reject crawl.')
+    # if not rp.can_fetch(useragent=agent, url=url):
+    #     raise Exception('This site reject crawl.')
 
     response = get(url)
 
