@@ -35,8 +35,12 @@ class NewsGenerator:
 
         self.builder.append(''.join([f.text for f in resp.parts]))
 
-    def make_trailer(self):
+    def make_trailer(self, urls: list[str] = None):
         self.builder.append('\n## 주의\n\n - 이 글은 Gemini Flash를 이용하여 생성한 것으로, 사실과 다를 수 있습니다.\n\n')
+        if urls is not None:
+            self.builder.append('## 출처\n\n')
+            for i, url in enumerate(urls):
+                self.builder.append(f' - [{url}]({url})\n')
 
     def __str__(self) -> str:
         return ''.join(self.builder)
