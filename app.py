@@ -26,7 +26,7 @@ def main():
 
     now = datetime.now()
 
-    with open(f'news-{now.year}:{now.month}:{now.day}-{now.hour}:{now.minute}:{now.second}.md', 'w', encoding='UTF-8') as f:
+    with open(f'news-{now.timestamp()}.md', 'w', encoding='UTF-8') as f:
         f.write(str(generator))
 
 
