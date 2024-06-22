@@ -29,7 +29,7 @@ class NewsGenerator:
                           I give you a article or repository about programming and development. You must write in korean.
                           You must write a summary, description, features, usage, recommendation, external links, and caution in markdown script.
                           Origin URL: ''' + url + '''.
-                          Write in this format, you can skip optional parts:
+                          Write in this format, you can skip unnecessary parts:
                           ''' + template)
         resp = chat.send_message(body)
 
