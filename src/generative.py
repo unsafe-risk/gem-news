@@ -15,14 +15,14 @@ class NewsGenerator:
     def make_header(self, title: str):
         self.builder.append(f'# {title}\n\n')
 
-    def generate(self, url: str):
+    def generate(self, url: str) -> bool:
         try:
             body = get_body(url)
         except Exception as e:
-            return
+            return False
 
         if body is None or len(body) == 0:
-            return
+            return False
 
         chat = self.model.start_chat()
         chat.send_message('''You are a curator of a newsletter about programming method, programming language, database, development, etc.
@@ -34,6 +34,8 @@ class NewsGenerator:
         resp = chat.send_message(body)
 
         self.builder.append(''.join([f.text for f in resp.parts]))
+
+        return True
 
     def make_trailer(self, urls: list[str] = None):
         self.builder.append('\n## 주의\n\n - 이 글은 Gemini Flash를 이용하여 생성한 것으로, 사실과 다를 수 있습니다.\n\n')
